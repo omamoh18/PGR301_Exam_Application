@@ -7,5 +7,5 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 class DragonBallZApplication{}
 
 fun main(args: Array<String>) {
-    SpringApplication.run(DragonBallZApplication::class.java, *args)
+    SpringApplication.run(DragonBallZApplication::class.java, "--spring.profiles.active=production")
 }
