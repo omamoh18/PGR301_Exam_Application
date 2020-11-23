@@ -43,9 +43,9 @@ but I ran out of time. This is why I will try to explain it here and give som ex
  
  ## Assignments:
  
- -[x] Assignment 1 (Docker)
- -[ ] Assigment 2 (Metrics,InfluxDB)
- -[x] Assignment 3 (Logs)
- -[x] Assignment 4 (Infrastructure)
- -[x] Assigment 5 (StatusCake)
- -[ ] Assignment 6 (free choice of IaC)
+ - [x] Assignment 1 (Docker)
+ - [ ] Assigment 2 (Metrics,InfluxDB)
+ - [x] Assignment 3 (Logs)
+ - [x] Assignment 4 (Infrastructure)
+ - [x] Assigment 5 (StatusCake)
+ - [ ] Assignment 6 (free choice of IaC)
