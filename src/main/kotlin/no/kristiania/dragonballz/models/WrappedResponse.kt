@@ -30,7 +30,7 @@ open class WrappedResponse<T>(
             throw  IllegalStateException("Invalid HTTP code: $code")
         }
 
-        if(status == null){
+        if(status == null) {
             status = when (c) {
                 in 100..399 -> ResponseStatus.SUCCESS
                 in 400..499 -> ResponseStatus.ERROR
