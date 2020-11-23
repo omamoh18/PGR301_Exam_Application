@@ -6,6 +6,7 @@ import io.restassured.http.ContentType
 import no.kristiania.dragonballz.models.dto.DragonBallZDto
 import no.kristiania.dragonballz.repository.DragonBallZRepository
 import no.kristiania.dragonballz.service.DragonBallZService
+import org.hamcrest.CoreMatchers
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -53,8 +54,5 @@ class DbzRestApiTest {
 
     }
 
-    @Test
-    fun testGetAllCharacters(){
-    //new test
-    }
+
  }

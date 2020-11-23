@@ -1,6 +1,5 @@
 package no.kristiania.dragonballz.service
 
-import no.kristiania.dragonballz.models.WrappedResponse
 import no.kristiania.dragonballz.models.dto.DragonBallZDto
 import no.kristiania.dragonballz.models.entity.DbzCharacterEntity
 import no.kristiania.dragonballz.repository.DragonBallZRepository
@@ -44,10 +43,5 @@ class DragonBallZService(
 
     }
 
-    fun update(idNumber: String?, dragonBallZDto: DragonBallZDto): ResponseEntity<WrappedResponse<List<DragonBallZDto>>> {
-
-
-        return null!!
-    }
 
 }

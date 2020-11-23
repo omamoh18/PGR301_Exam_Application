@@ -8,13 +8,9 @@ import java.util.*
 @Repository
 interface DragonBallZRepository : CrudRepository<DbzCharacterEntity, Long> {
 
-    fun findByCharacterName(characterName: String): Iterable<DbzCharacterEntity>
-
-    fun findAllByCharacterNameContainingIgnoreCase(characterName: String): Iterable<DbzCharacterEntity>
-
     fun existsByCharacterName(characterName: String?): Boolean
 
-
     override fun findById(id: Long): Optional<DbzCharacterEntity>
+
 
 }

@@ -5,6 +5,7 @@ import io.micrometer.core.instrument.Tag
 import no.kristiania.dragonballz.models.WrappedResponse
 import no.kristiania.dragonballz.models.dto.DragonBallZDto
 import no.kristiania.dragonballz.models.entity.DbzCharacterEntity
+import no.kristiania.dragonballz.repository.DragonBallZRepository
 import no.kristiania.dragonballz.service.DragonBallZService
 import no.kristiania.dragonballz.util.DragonBallZConverter
 import no.kristiania.dragonballz.util.RestResponseFactory
@@ -26,6 +27,9 @@ class DragonBallZController {
     private lateinit var dragonBallZService: DragonBallZService
 
     @Autowired
+    private lateinit var dragonBallZRepository: DragonBallZRepository
+
+    @Autowired
     private lateinit var registry: MeterRegistry
 
     private val logger: Logger = Logger.getLogger(this::class.java.name)
@@ -36,8 +40,8 @@ class DragonBallZController {
     ): ResponseEntity<WrappedResponse<List<DragonBallZDto>>> {
         val result = DragonBallZConverter.convertToDtoList(dragonBallZService.getAll())
 
-        registry.gaugeCollectionSize("retrieved.measurements.count", listOf(Tag.of("type", "collection")), result)
-
+        // Demonstration of counter
+        registry.counter("api_response", "code", "200").increment()
         logger.info("request for characters")
 
         return RestResponseFactory.payload(200, result)
@@ -52,9 +56,11 @@ class DragonBallZController {
     }
 
     @GetMapping(path = ["/{id}"])
-    fun get(
+    fun getById(
             @PathVariable("id")
             id: String?) : ResponseEntity<WrappedResponse<Optional<DbzCharacterEntity>?>> {
+
         return RestResponseFactory.payload(200, dragonBallZService.findByCharacterId(id!!))
     }
+
 }
