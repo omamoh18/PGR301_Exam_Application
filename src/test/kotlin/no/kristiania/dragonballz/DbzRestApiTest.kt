@@ -54,6 +54,6 @@ class DbzRestApiTest {
 
     @Test
     fun testGetAllCharacters(){
-
+    //new test
     }
  }
